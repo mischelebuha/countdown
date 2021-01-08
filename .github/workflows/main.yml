@@ -1,9 +1,7 @@
-name: Deploy to GitHub Pages via angular-cli-ghpages
-
-on: push
-
- jobs:
-   build-and-deploy:
+name: Build and Deploy
+on: [push]
+jobs:
+  build-and-deploy:
      runs-on: ubuntu-latest
 
      steps:
