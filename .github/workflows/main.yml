@@ -21,7 +21,7 @@ jobs:
      - name: Install and Build
        run: |
          npm install
-         npm run ng -- build --production
+         npm run ng -- build --prod
          
      - name: Deploy
        uses: JamesIves/github-pages-deploy-action@3.6.2
