@@ -9,19 +9,19 @@
         </div>
 
         <mat-divider></mat-divider>
-    
-        <div fxLayoutAlign="center" fxLayoutGap="20px">
-            <button mat-fab (click)="addCounter()">
-                <mat-icon>add</mat-icon>
-            </button>
-            <button mat-fab (click)="removeCounter()">
+
+        <div fxLayout="row" *ngFor="let counter of counters" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="5px">
+            <app-count-down> </app-count-down>
+            <button mat-icon-button (click)="removeCounter(counter)">
                 <mat-icon>delete</mat-icon>
             </button>
         </div>
 
-        <mat-divider></mat-divider>
-    
-        <app-count-down *ngFor="let i of Arr(counters).fill(1)"> </app-count-down>
+        <div fxLayoutAlign="center" fxLayoutGap="20px">
+            <button mat-fab (click)="addCounter()">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
 
     </div>
 

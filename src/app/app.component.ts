@@ -9,15 +9,21 @@ import { Subscription } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, OnDestroy{
+export class AppComponent implements OnInit, OnDestroy {
 
   private msSource: Subscription;
 
-  public counters = 1;
   public Arr = Array; //Array type captured in a variable
 
 
   public currentTime = new Date();
+
+  public index: number = 0;
+
+  public counters: number[] =
+    [
+      0
+    ];
 
   title = 'Countdown';
 
@@ -33,14 +39,12 @@ export class AppComponent implements OnInit, OnDestroy{
   }
 
   addCounter() {
-    this.counters++;
-
+    this.index++;
+    this.counters.push(this.index);
   }
 
-  removeCounter() {
-    this.counters--;
-    if (this.counters < 1) {
-      this.counters = 1;
-    }
+  removeCounter(counter: number) {
+    let index = this.counters.indexOf(counter);
+    this.counters.splice(index, 1);
   }
 }
