@@ -1,13 +1,16 @@
 <mat-sidenav-container fxFlex>
-    
-        <div fxLayoutAlign="space-around center">
+    <div fxLayout="column" fxLayoutGap="20px">
+
+        <div fxLayoutAlign="center" fxpa>
             <div class="timer">
                 <h4>Current Time</h4>
                 <span>{{currentTime | date:'dd.MM.yyyy hh:mm:ss:S'}}</span>
             </div>
         </div>
-
-        <div>
+        
+        <mat-divider></mat-divider>
+    
+        <div fxLayoutAlign="center" fxLayoutGap="20px">
             <button mat-fab (click)="addCounter()">
                 <mat-icon>add</mat-icon>
             </button>
@@ -16,7 +19,10 @@
             </button>
         </div>
 
+        <mat-divider></mat-divider>
+    
         <app-count-down *ngFor="let i of Arr(counters).fill(1)"> </app-count-down>
 
-</mat-sidenav-container>
+    </div>
 
+</mat-sidenav-container>
