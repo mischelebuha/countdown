@@ -19,7 +19,7 @@ export class AppComponent implements OnInit, OnDestroy{
 
   public currentTime = new Date();
 
-  title = 'timer';
+  title = 'Countdown';
 
   ngOnInit() {
     this.msSource = interval(1)
